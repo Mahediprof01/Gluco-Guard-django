@@ -16,9 +16,10 @@
       .hero-section{
         
         min-height: 60vh;
-        background-image: url( "{% static 'img/bg.jpg' %}");
+        background-color: #212121;
+        {% comment %} background-image: url( "{% static 'img/bg.jpg' %}");
         background-size: cover;
-        background-position: center;
+        background-position: center; {% endcomment %}
       }
       .who-section{
         background-color: #F1F6FB;
@@ -26,9 +27,10 @@
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       }
       .nav-bg{
-        background-image: url( "{% static 'img/navbg.jpg' %}");
+        background-color: #212121;
+        {% comment %} background-image: url( "{% static 'img/navbg.jpg' %}");
         background-size: cover;
-        background-position: center;
+        background-position: center; {% endcomment %}
       }
         
       .form-bg{
@@ -39,17 +41,17 @@
         color: white;
       }
       .p-section{
-        background-image: url( "{% static 'img/p-bg.jpg' %}");
+        background-image: url( "{% static 'img/p2-bg.jpg' %}");
         background-size: cover;
         background-position: center;
       }
 
     </style>
 </head>
-<body>
+<body class="bg-dark">
   {% comment %} navbar {% endcomment %}
-  <section class="nav-bg">
-    <div class="container">
+  <section class="mt-4">
+    <div class="container nav-bg">
       <nav class="navbar navbar-expand-lg p-4">
         <div class="container-fluid">
           <a class="navbar-brand fs-2 fw-bold text-white" href="#">Gluco Guard</a>
@@ -68,7 +70,7 @@
                 <a class="nav-link active text-white" aria-current="page" href="#">Service</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active btn btn-primary text-white" aria-current="page" href="{%url 'logout'%}" >Log out</a>
+                <a class="nav-link active btn btn-danger text-white" aria-current="page" href="{%url 'logout'%}" >Log out</a>
               </li>
           </div>
         </div>
@@ -76,14 +78,14 @@
     </div>
   </section>
   {% comment %} 2d {% endcomment %}
-  <section class="hero-section">
-    <div class="container-fluid">
-      <div class="row">
+  <section class="mt-4">
+    <div class="container hero-section ">
+      <div class="row ">
         <div class="col-10 mx-auto">
           <div class="row p-4 ">
             <div class="col-md-6 col-10 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-              <h1 class='my-3 text-color fw-bolder'><strong>Gluco Guard - The future of technology starts here</strong></h1>
-              <h4 class='my-3 text-dark'>
+              <h1 class='my-3 text-white fw-bolder'><strong>Gluco Guard - The future of technology starts here</strong></h1>
+              <h4 class='my-3 text-white'>
                 It simplifies the process of dealing with diabetic detection for women.
               </h4>
             </div>
@@ -98,15 +100,15 @@
 
 
    {% comment %} 3rd {% endcomment %}
-   <section class="container-fluid mt-4">
-    <div class="container-fluid who-section">
+   <section class="container-fluid  mt-4">
+    <div class="container-fluid nav-bg">
       <div class="row">
         <div class="col-10 mx-auto">
           <div class="row p-4 ">
             <div class="col-md-6 col-10 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-              <h1 class='my-3 text-color fw-bolder'><strong>Who are we?</strong></h1>
+              <h1 class='my-3 text-white fw-bolder'><strong>Who are we?</strong></h1>
             </div>
-            <div class="col-md-6 col-10 pt-5 pt-lg-0 order-1 order-lg-2">
+            <div class="col-md-6 text-white col-10 pt-5 pt-lg-0 order-1 order-lg-2">
               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi, delectus vero blanditiis odio aspernatur quia provident aliquid corrupti sunt consequuntur mollitia voluptatibus architecto eveniet nam quis accusamus. Debitis, molestias quos!</p>
             </div>
           </div>
@@ -116,8 +118,8 @@
 </section>
 
 {% comment %} predict {% endcomment %}
-<section class="p-section mt-5">
-  <div class="container-fluid">
+<section class="mt-5">
+  <div class="container p-section ">
     <div class="row">
       <div class="col-10 mx-auto">
         <h1 class="text-center mt-4 mb-4 text-white">Predict Table</h1>
@@ -167,8 +169,8 @@
 </section>
 
 {% comment %} Footer {% endcomment %}
-<section class="bg-primary">
-  <div class="container my-5">
+<section class="">
+  <div class="container my-5 nav-bg">
     <!-- Footer -->
     <footer class="text-center text-white">
       <!-- Grid container -->
