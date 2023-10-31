@@ -34,16 +34,16 @@
       }
       .custom-btn{
         border: none;
-        background: #329EB5;
+        background: #b02a37;
         color: white;
         padding: 10px 20px;
         border-radius: 20px;
         font-weight: 900;
       }
       .custom-btn:hover{
-        border: 1px solid 329EB5;
+        border: 1px solid #b02a37;
         background: white;
-        color: #329EB5;
+        color: #b02a37;
         padding: 10px 20px;
         border-radius: 20px;
         transition: 0.2s linear;
@@ -64,7 +64,7 @@
           <div class="col-10 mx-auto">
             <div class="row login-section">
               <div class="col-md-4 col-10  p-4 form-design">
-                <h3 class="text-center fw-bolder">Log in</h3>
+                <h3 class="text-center fw-bolder text-danger">Log in</h3>
                 <form method ='post'>
                  {% csrf_token %}
                   <div class="mb-3">
@@ -76,7 +76,7 @@
                     <input type="password" name='loginpass' class="form-control" id="password">
                   </div>
                   <button type="submit" class="custom-btn">Log In</button>
-                  <p class=" mt-3 me-1">Sign Up for Register !<a href="{%url 'signup'%}"  class="link-custom-btn">Sign Up</a> </p>
+                  <p class=" mt-3 me-1">Sign Up for Register !<a href="{%url 'signup'%}"  class="link-custom-btn text-danger">Sign Up</a> </p>
                 </form>
               </div>
             </div>

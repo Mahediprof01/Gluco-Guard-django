@@ -36,7 +36,6 @@ def SignupPage(request):
             my_user.save()
             return redirect('login')
         
-
     return render (request,'signup.html')
 """ For Loginpage """
 def LoginPage(request):

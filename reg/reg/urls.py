@@ -10,3 +10,4 @@ urlpatterns = [
     path('home/result',views.result),
     path('logout/',views.LogoutPage,name='logout'),
 ]
+
