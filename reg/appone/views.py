@@ -2,17 +2,14 @@ from django.shortcuts import render,HttpResponse,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
-import pyrebase
+
 """ Libraries of LR model """
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-import joblib
 from sklearn.metrics.pairwise import euclidean_distances
-
-
 
 
 
