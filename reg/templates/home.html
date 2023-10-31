@@ -12,23 +12,25 @@
         padding: 0;
         box-sizing: border-box;
         font-family: 'Roboto Mono', monospace;
+        
       }
       .hero-section{
-        
         min-height: 60vh;
-        background-image: url( "{% static 'img/bg.jpg' %}");
-        background-size: cover;
-        background-position: center;
+        background-color: #212121;
+        box-shadow: rgba(220, 53, 69, 0.5) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        border-radius: 30px;
       }
       .who-section{
-        background-color: #F1F6FB;
-        border-radius: 5px;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        background-color: #212121;
+        margin-top:80px;
+        box-shadow: rgba(220, 53, 69, 0.5) 0px 54px 55px, rgba(220, 53, 69, 0.5) 0px -22px 30px, rgba(220, 53, 69, 0.5) 0px 4px 6px, rgba(220, 53, 69, 0.5) 0px 12px 13px, rgba(220, 53, 69, 0.5) 0px -3px 5px;
+        margin-bottom:100px;
+        border-radius: 30px;
       }
       .nav-bg{
-        background-image: url( "{% static 'img/navbg.jpg' %}");
-        background-size: cover;
-        background-position: center;
+        background-color: #212121;
+        box-shadow: rgba(220, 53, 69, 0.5) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        border-radius: 30px;
       }
         
       .form-bg{
@@ -39,20 +41,44 @@
         color: white;
       }
       .p-section{
-        background-image: url( "{% static 'img/p-bg.jpg' %}");
+        background-image: url( "{% static 'img/p2-bg.jpg' %}");
         background-size: cover;
         background-position: center;
+        box-shadow: rgba(220, 53, 69, 0.5) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        border-radius: 30px;
       }
+      .animated{
+        animation: up-down 2s ease-in-out infinite alternate-reverse both;
+    }
+    @-webkit-keyframes up-down{
+        0%{
+            transform: translateY(10px);
+        }100%{
+            transform: translateY(-10px);
+        }
+    }
+    @keyframes up-down{
+        0%{
+            transform: translateY(10px);
+        }100%{
+            transform: translateY(-10px);
+        }
+    }
+    .p-tag{
+      background-color: black;
+      padding: 15px 20px;
+      border-radius: 20px;
+    }
 
     </style>
 </head>
-<body>
+<body class="bg-dark">
   {% comment %} navbar {% endcomment %}
-  <section class="nav-bg">
-    <div class="container">
+  <section class="mt-4">
+    <div class="container nav-bg">
       <nav class="navbar navbar-expand-lg p-4">
         <div class="container-fluid">
-          <a class="navbar-brand fs-2 fw-bold text-white" href="#">Gluco Guard</a>
+          <a class="navbar-brand fs-2 fw-bold text-white" href="#"><img class="img-fluid" src="{% static 'img/navgg.png' %}">Gluco Guard</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -68,7 +94,7 @@
                 <a class="nav-link active text-white" aria-current="page" href="#">Service</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active btn btn-primary text-white" aria-current="page" href="{%url 'logout'%}" >Log out</a>
+                <a class="nav-link active btn btn-danger text-white" aria-current="page" href="{%url 'logout'%}" >Log out</a>
               </li>
           </div>
         </div>
@@ -76,19 +102,19 @@
     </div>
   </section>
   {% comment %} 2d {% endcomment %}
-  <section class="hero-section">
-    <div class="container-fluid">
-      <div class="row">
+  <section class="mt-4">
+    <div class="container hero-section ">
+      <div class="row ">
         <div class="col-10 mx-auto">
           <div class="row p-4 ">
             <div class="col-md-6 col-10 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-              <h1 class='my-3 text-color fw-bolder'><strong>Gluco Guard - The future of technology starts here</strong></h1>
-              <h4 class='my-3 text-dark'>
+              <h1 class='my-3 text-danger fs-1 fw-bolder'><strong>Gluco Guard</strong></h1>
+              <p class='my-3 text-white'>
                 It simplifies the process of dealing with diabetic detection for women.
-              </h4>
+              </p>
             </div>
             <div class="col-md-6 col-10 pt-5 pt-lg-0 order-1 order-lg-2">
-              <img class='img-fluid animated' src='./img/eye1.png'  alt="#" />
+              <img class="img-fluid animated" src="{% static 'img/logineye.png' %}">
             </div>
           </div>
         </div>
@@ -98,16 +124,16 @@
 
 
    {% comment %} 3rd {% endcomment %}
-   <section class="container-fluid mt-4">
-    <div class="container-fluid who-section">
+   <section class="container-fluid  mt-4">
+    <div class="container-fluid  who-section">
       <div class="row">
         <div class="col-10 mx-auto">
           <div class="row p-4 ">
             <div class="col-md-6 col-10 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-              <h1 class='my-3 text-color fw-bolder'><strong>Who are we?</strong></h1>
+              <h1 class='my-3 text-danger fw-bolder'><strong>Who are we?</strong></h1>
             </div>
-            <div class="col-md-6 col-10 pt-5 pt-lg-0 order-1 order-lg-2">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi, delectus vero blanditiis odio aspernatur quia provident aliquid corrupti sunt consequuntur mollitia voluptatibus architecto eveniet nam quis accusamus. Debitis, molestias quos!</p>
+            <div class="col-md-6 text-white col-10 pt-5 pt-lg-0 order-1 order-lg-2">
+              <p>Our machine learning project aims to develop a sophisticated diagnostic tool specifically designed for detecting diabetes in women. By analyzing a comprehensive dataset of female patients, we employ advanced algorithms to identify early indicators and risk factors, ultimately empowering healthcare professionals with a precise and timely screening tool for female diabetes patients.</p>
             </div>
           </div>
         </div>
@@ -116,48 +142,48 @@
 </section>
 
 {% comment %} predict {% endcomment %}
-<section class="p-section mt-5">
-  <div class="container-fluid">
+<section class="mt-5">
+  <div class="container p-section ">
     <div class="row">
       <div class="col-10 mx-auto">
-        <h1 class="text-center mt-4 mb-4 text-white">Predict Table</h1>
+        <h1 class="text-center mt-4 mb-4 text-danger p-tag">Predict Table</h1>
         <div class="row p-4 justify-content-center">
             <form action="result" class="w-50 p-5 form-bg">
               <div class="mb-3">
                 <label class="form-label text-white">Pregnancies</label>
-                <input type="text" name='in1' class="form-control"  aria-describedby="emailHelp">
+                <input type="text" name='in1' class="form-control"  aria-describedby="emailHelp" required>
               </div>
               <div class="mb-3">
                 <label class="form-label text-white">Glucose</label>
-                <input type="text" name='in2' class="form-control"  aria-describedby="emailHelp">
+                <input type="text" name='in2' class="form-control"  aria-describedby="emailHelp" required>
               </div>
               <div class="mb-3">
                 <label class="form-label text-white">Blood Pressure</label>
-                <input type="text" name='in3' class="form-control"  aria-describedby="emailHelp">
+                <input type="text" name='in3' class="form-control"  aria-describedby="emailHelp" required>
               </div>
               <div class="mb-3">
                 <label class="form-label text-white">Skin Thickness</label>
-                <input type="text" name='in4' class="form-control"  aria-describedby="emailHelp">
+                <input type="text" name='in4' class="form-control"  aria-describedby="emailHelp" required>
               </div>
               <div class="mb-3">
                 <label class="form-label text-white">Insulin</label>
-                <input type="text" name='in5' class="form-control"  aria-describedby="emailHelp">
+                <input type="text" name='in5' class="form-control"  aria-describedby="emailHelp" required>
               </div>
               <div class="mb-3">
                 <label class="form-label text-white">BMI</label>
-                <input type="text" name='in6' class="form-control"  aria-describedby="emailHelp">
+                <input type="text" name='in6' class="form-control"  aria-describedby="emailHelp" required>
               </div>
               <div class="mb-3">
                 <label class="form-label text-white">Diabetes pedigree Function</label>
-                <input type="text" name='in7' class="form-control"  aria-describedby="emailHelp">
+                <input type="text" name='in7' class="form-control"  aria-describedby="emailHelp" required>
               </div>
               <div class="mb-3">
                 <label class="form-label text-white">Age</label>
-                <input type="text" name='in8' class="form-control"  aria-describedby="emailHelp">
+                <input type="text" name='in8' class="form-control"  aria-describedby="emailHelp" required>
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button id = 'button' type="submit" class="btn btn-danger" >Submit</button>
             </form>
-            <div class="mt-3 text-center fs-3 text-white">
+            <div class="mt-3 text-center fs-3 p-tag text-danger">
               Result:{{resultval}}
             </div>
         </div>
@@ -167,10 +193,10 @@
 </section>
 
 {% comment %} Footer {% endcomment %}
-<section class="bg-primary">
-  <div class="container my-5">
+<section class="">
+  <div class="container my-5 nav-bg">
     <!-- Footer -->
-    <footer class="text-center text-white">
+    <footer id='footer' class="text-center text-white">
       <!-- Grid container -->
       <div class="container">
         <!-- Section: Links -->
@@ -223,30 +249,15 @@
   
         <hr class="my-5" />
   
-        <!-- Section: Text -->
-        <section class="mb-5">
-          <div class="row d-flex justify-content-center">
-            <div class="col-lg-8">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-                distinctio earum repellat quaerat voluptatibus placeat nam,
-                commodi optio pariatur est quia magnam eum harum corrupti
-                dicta, aliquam sequi voluptate quas.
-              </p>
-            </div>
-          </div>
-        </section>
-      </div>
       <!-- Grid container -->
-  
-      <!-- Copyright -->
+
       <div
-           class="text-center p-3"
-           style="background-color: rgba(0, 0, 0, 0.2)"
+           class="text-center p-2 "
+           style="background-color: rgba(0, 0, 0, 0.2); border-radius: 30px;"
            >
-        © Copyright
+           Take &#10084;
       </div>
-      <!-- Copyright -->
+
     </footer>
     <!-- Footer -->
   </div>
@@ -255,47 +266,6 @@
 
 
 
-{% comment %}     <div class="container">
-        <h1 class='text-center'>Predict table</h1>
-        <form action="result" class="w-50">
-            <div class="mb-3">
-              <label class="form-label">Pregnancies</label>
-              <input type="text" name='in1' class="form-control"  aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Glucose</label>
-              <input type="text" name='in2' class="form-control"  aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Blood Pressure</label>
-              <input type="text" name='in3' class="form-control"  aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Skin Thickness</label>
-              <input type="text" name='in4' class="form-control"  aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Insulin</label>
-              <input type="text" name='in5' class="form-control"  aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">BMI</label>
-              <input type="text" name='in6' class="form-control"  aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Diabetes pedigree Function</label>
-              <input type="text" name='in7' class="form-control"  aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Age</label>
-              <input type="text" name='in8' class="form-control"  aria-describedby="emailHelp">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-          <div class="mt-3">
-            Result:{{resultval}}
-          </div>
-       </div> {% endcomment %}
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>

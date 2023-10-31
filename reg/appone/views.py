@@ -2,18 +2,21 @@ from django.shortcuts import render,HttpResponse,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
-
+import pyrebase
 """ Libraries of LR model """
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score
+import joblib
+from sklearn.metrics.pairwise import euclidean_distances
 
 
 
 
+
+"""For Google Auth """
 @login_required(login_url='login')
 def HomePage(request):
     return render (request,'home.html')
@@ -58,7 +61,7 @@ def LogoutPage(request):
 
 
 def result(request):
-    data_dia = pd.read_csv(r'C:\diabetes.csv')
+    data_dia = pd.read_csv(r'E:\ML Project\diabetes.csv')
     A = data_dia.drop('Outcome', axis = 1)
     B = data_dia['Outcome']
     A_train, A_test, B_train, B_test = train_test_split(A,B,test_size = 0.2)
@@ -79,8 +82,8 @@ def result(request):
 
     resultvalmap = ''
     if predictionval ==[1]:
-        resultvalmap = 'positive'
+        resultvalmap ="Oops! You have DIABETES 😔"
     else:
-        resultvalmap='negative'
+        resultvalmap="Great! You DON'T have daibetes 🤗"
 
     return render(request,'home.html',{"resultval":resultvalmap})
